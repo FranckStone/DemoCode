@@ -7,6 +7,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>demoCode Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -14,8 +16,39 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    
+    <!-- 自制Jetty插件用 -->
+	<dependency>
+	    <groupId>org.eclipse.jetty.aggregate</groupId>
+	    <artifactId>jetty-all</artifactId>
+	    <version>9.0.0.v20130308</version>
+	  </dependency>
+	  <dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	  </dependency>
+	  <dependency>
+	     <groupId>org.eclipse.jetty</groupId>
+	     <artifactId>jetty-jsp</artifactId>
+	     <version>9.0.0.v20130308</version>
+	  </dependency>
+	  
+	  
+	  
   </dependencies>
   <build>
     <finalName>demoCode</finalName>
+     <plugins>  
+        <plugin>  
+            <groupId>org.apache.maven.plugins</groupId>  
+            <artifactId>maven-compiler-plugin</artifactId>  
+            <configuration>  
+                <source>1.8</source>  
+                <target>1.8</target>  
+            </configuration>  
+        </plugin>  
+    </plugins> 
   </build>
 </project>
