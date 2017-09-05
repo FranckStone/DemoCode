@@ -1,11 +1,13 @@
 package com.demo.main;
 
+import org.apache.log4j.Logger;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
 
 public class Main {
 
 	
+	private static Logger logger = Logger.getLogger(Main.class); 
 	
 	public static void main(String[] args) {
 
@@ -23,7 +25,8 @@ public class Main {
         try {
             server.setHandler(webAppContext);  
             server.start();
-            System.out.println("server is  start, port is "+port+"............");  
+            logger.info("server is  start, port is "+port+"............");  
+            
             server.join();
         } catch (Exception e) {
             e.printStackTrace();
