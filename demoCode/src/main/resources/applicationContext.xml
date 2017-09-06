@@ -52,5 +52,31 @@
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
         <property name="dataSource" ref="dataSource" />  
     </bean>  
+    
+    <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+    	<property name="transactionManager" ref="transactionManager"></property>
+    </bean>
+    
+    
+    
+    <!-- 第一种事务配置方式 -->
+    <!-- <bean id="usersServiceTr" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    	<property name="transactionManager" ref="transactionManager"></property>
+    	<property name="target" ref="usersService" />
+    	<property name="transactionAttributes">
+    		<props>
+    			<prop key="*">PROPAGATION_REQUIRED</prop>
+    		</props>
+    	</property>
+    
+    </bean> -->
+    
+    
+    
+    
+    
+  
+  
+  
   
 </beans>  
