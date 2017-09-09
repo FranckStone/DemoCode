@@ -18,7 +18,10 @@ public class jdbcDemo {
 	
 	private static Logger logger = Logger.getLogger(jdbcDemo.class);  
 
-    @Resource(name="usersService")
+	//第一种声明式
+//    @Resource(name="usersServiceTr")
+	
+	@Resource(name="usersService")
     private UsersService usersService; 
     
     
